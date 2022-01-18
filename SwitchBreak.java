@@ -1,14 +1,18 @@
-public class Ifelse {
+public class SwitchBreak {
     public static void main(String[] args) {
         int n = 3;
 
-        if (n == 1) {
+        switch(n) {
+            case 1:
             System.out.println("Simple Java");
-        } else if (n == 2) {
+            break;
+            case 2:
             System.out.println("Funny Java");
-        } else if (n == 3) {
+            break;
+            case 3:
             System.out.println("Fantastic Java");
-        } else {
+            break;
+            default:
             System.out.println("The best programming language");
         }
 
