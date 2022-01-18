@@ -1,18 +1,16 @@
-public class SwitchBasic {
+import javax.lang.model.util.ElementScanner14;
+
+public class Ifelse {
     public static void main(String[] args) {
         int n = 3;
 
-        switch(n) {
-            case 1:
+        if (n == 1) {
             System.out.println("Simple Java");
-            break;
-            case 2:
+        } else if (n == 2) {
             System.out.println("Funny Java");
-            break;
-            case 3:
+        } else if (n == 3) {
             System.out.println("Fantastic Java");
-            break;
-            default:
+        } else {
             System.out.println("The best programming language");
         }
 
