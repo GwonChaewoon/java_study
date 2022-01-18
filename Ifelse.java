@@ -1,5 +1,3 @@
-import javax.lang.model.util.ElementScanner14;
-
 public class Ifelse {
     public static void main(String[] args) {
         int n = 3;
