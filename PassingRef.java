@@ -15,16 +15,15 @@ class BankAccount {
     }
 }
 
-public class DupRef {
+public class PassingRef {
     public static void main(String[] args) {
-        BankAccount ref1 = new BankAccount();
-        BankAccount ref2 = ref1;
+        BankAccount ref = new BankAccount();
+        ref.deposit(3000);
+        ref.withdraw(300);
+        check(ref);
+    }
 
-        ref1.deposit(3000);
-        ref2.deposit(2000);
-        ref1.withdraw(400);
-        ref2.withdraw(300);
-        ref1.checkMyBalance();
-        ref2.checkMyBalance();
+    public static void check(BankAccount acc) {
+        acc.checkMyBalance();
     }
 }
