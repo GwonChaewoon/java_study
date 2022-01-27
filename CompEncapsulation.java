@@ -1,18 +1,28 @@
-class SinusCap {
-    void sniTake() {
+class SinivelCap {
+    void take() {
         System.out.println("콧물이 싹~ 납니다.");
     }
-    void sneTake() {
+} 
+
+class SneezeCap {
+    void take() {
         System.out.println("재채기가 멎습니다.");
     }
-    void snuTake() {
+}
+
+class SnuffleCap {
+    void take() {
         System.out.println("코가 뻥 뚫립니다.");
     }
+}
+
+class SinusCap {
+    SinivelCap siCap = new SinivelCap();
+    SneezeCap szCap = new SneezeCap();
+    SnuffleCap sfCap = new SnuffleCap();
 
     void take() {
-        sniTake();
-        sneTake();
-        snuTake();
+        siCap.take(); szCap.take(); sfCap.take();
     }
 }
 
@@ -22,7 +32,7 @@ class ColdPatient {
     }
 }
 
-public class OneClassEncapsulation {
+public class CompEncapsulation {
     public static void main(String[] args) {
         ColdPatient suf = new ColdPatient();
         suf.takeSinus(new SinusCap());
