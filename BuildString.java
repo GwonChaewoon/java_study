@@ -1,20 +1,19 @@
 public class BuildString {
     public static void main(String[] args) {
-        StringBuilder stbuf = new StringBuilder("123");
+        StringBuilder stb1 = new StringBuilder("123");
+        StringBuilder stb2 = stb1.append(45678);
 
-        stbuf.append(45678);
-        System.out.println(stbuf.toString());
+        System.out.println(stb1.toString());
+        System.out.println(stb2.toString());
 
-        stbuf.delete(0, 2);
-        System.out.println(stbuf.toString());
+        stb2.delete(0, 5);
 
-        stbuf.replace(0, 3, "AB");
-        System.out.println(stbuf.toString());
+        System.out.println(stb1.toString());
+        System.out.println(stb2.toString());
 
-        stbuf.reverse();
-        System.out.println(stbuf.toString());
-
-        String sub = stbuf.substring(2, 4);
-        System.out.println(sub);
+        if(stb1 == stb2)
+            System.out.println("같은 인스턴스 참조");
+        else
+            System.out.println("다른 인스턴스 참조");
     }
 }
