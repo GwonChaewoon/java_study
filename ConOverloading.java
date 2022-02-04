@@ -7,8 +7,7 @@ class Person {
         passNum = pnum;
     }
     Person(int rnum) {
-        regiNum = rnum;
-        passNum = 0;
+        this(rnum, 0);
     }
     void showPersonalInfo() {
         System.out.println("주민등록 번호: " + regiNum);
