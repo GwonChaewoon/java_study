@@ -1,5 +1,5 @@
 class MobilePhone {
-    protected String number;    //전화번호
+    protected String number;
 
     public MobilePhone(String num) {
         number = num;
@@ -10,7 +10,7 @@ class MobilePhone {
 }
 
 class SmartPhone extends MobilePhone {
-    private String androidVer;     //안드로이드 운영체제 네임(버전)
+    private String androidVer;
 
     public SmartPhone(String num, String ver) {
         super(num);
@@ -21,10 +21,16 @@ class SmartPhone extends MobilePhone {
     }
 }
 
-public class MobileSmartPhone {
+public class MobileSmartPhoneRef {
     public static void main(String[] args) {
-        SmartPhone phone = new SmartPhone("010-6792-2533", "Nougat");
-        phone.answer();
-        phone.playApp();
+        SmartPhone ph1 = new SmartPhone("010-555-777", "Nougat");
+        MobilePhone ph2 = new SmartPhone("010-999-333", "Nougat");
+
+        ph1.answer();
+        ph1.playApp();
+        System.out.println();
+
+        ph2.answer();
+        // ph2.playApp();
     }
 }
