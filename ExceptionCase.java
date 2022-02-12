@@ -12,10 +12,7 @@ public class ExceptionCase {
             int n2 = kb.nextInt();
             System.out.printf("%d / %d = %d \n", n1, n2, n1 / n2);
         }
-        catch(ArithmeticException e) {
-            e.getMessage();
-        }
-        catch(InputMismatchException e) {
+        catch(ArithmeticException | InputMismatchException e) {
             e.getMessage();
         }
 
