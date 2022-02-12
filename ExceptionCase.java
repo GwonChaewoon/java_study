@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class ExceptionCase {
     public static void main(String[] args) {
@@ -9,12 +10,12 @@ public class ExceptionCase {
             int n1 = kb.nextInt();
             System.out.print("a/b...b? ");
             int n2 = kb.nextInt();
-            System.out.printf("%d / %d = %d \n", n1, n2, n1 / n2);  //예외 발생 지점
+            System.out.printf("%d / %d = %d \n", n1, n2, n1 / n2);
         }
-        catch(ArithmeticException e) {
-            System.out.println(e.getMessage());
+        catch(InputMismatchException e) {
+            e.getMessage();
         }
-        
+
         System.out.println("Good bye~~!");
     }
 }
