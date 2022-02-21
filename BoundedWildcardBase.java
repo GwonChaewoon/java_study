@@ -12,7 +12,7 @@ class Toy {
 }
 
 class BoxHandler {
-    public static void outBox(Box<Toy> box) {
+    public static void outBox(Box<? extends Toy> box) {
         Toy t = box.get();    // 상자에서 꺼내기
         System.out.println(t);
     }
