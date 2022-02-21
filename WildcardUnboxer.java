@@ -13,7 +13,7 @@ class Unboxer {
     public static <T> T openBox(Box<T> box) {
         return box.get();
     }
-    public static <T> void peekBox(Box<?> box) {   // 와일드카드 사용
+    public static void peekBox(Box<?> box) {   // 와일드카드 사용
         System.out.println(box);
     }
 }
