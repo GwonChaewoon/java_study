@@ -10,18 +10,20 @@ class Box<T> {
 }
 
 class Unboxer {
-    public static <T> T openBox(Box<T> box) {
-        return box.get();
-    }
-    public static void peekBox(Box<?> box) {   // 와일드카드 사용
+    public static void peekBox(Box<? extends Number> box) {
         System.out.println(box);
     }
 }
 
-public class WildcardUnboxer {
+public class UpperBoundedWildcard {
     public static void main(String[] args) {
-        Box<String> box = new Box<>();
-        box.set("So Simple String");
-        Unboxer.peekBox(box);
+        Box<Integer> iBox = new Box<>();
+        iBox.set(1234);
+
+        Box<Double> dBox = new Box<>();
+        dBox.set(10.009);
+
+        Unboxer.peekBox(iBox);
+        Unboxer.peekBox(dBox);
     }
 }
