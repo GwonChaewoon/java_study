@@ -13,15 +13,15 @@ class Toy {
 
 class BoxHandler {
     public static void outBox(Box<? extends Toy> box) {
-        Toy t = box.get();    // 상자에서 꺼내기
+        Toy t = box.get();   // 상자에서 꺼내기
         System.out.println(t);
     }
-    public static void inBox(Box<Toy> box, Toy n) {
-        box.set(n);    // 상자에 넣기
+    public static void inBox(Box<? super Toy> box, Toy n) {
+        box.set(n);     // 상자에 넣기
     }
 }
 
-public class BoundedWildcardBase {
+public class BoundedWildcardUsage2 {
     public static void main(String[] args) {
         Box<Toy> box = new Box<>();
         BoxHandler.inBox(box, new Toy());
