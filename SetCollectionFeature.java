@@ -1,24 +1,25 @@
-import java.util.Iterator;
 import java.util.HashSet;
-import java.util.Set;
+
+class Num {
+    private int num;
+    public Num(int n) { num = n; }
+
+    @Override
+    public String toString() {
+        return String.valueOf(num);
+    }
+}
 
 public class SetCollectionFeature {
     public static void main(String[] args) {
-        Set<String> set = new HashSet<>();
-        set.add("Toy");
-        set.add("Box");
-        set.add("Robot");
-        set.add("Box");
+        HashSet<Num> set = new HashSet<>();
+        set.add(new Num(7799));
+        set.add(new Num(9955));
+        set.add(new Num(7799));
         System.out.println("인스턴스 수: " + set.size());
 
-        // 반복자를 이용한 전체 출력
-        for(Iterator<String> itr = set.iterator(); itr.hasNext(); )
-            System.out.print(itr.next() + '\t');
-        System.out.println();
-
-        // for-each문을 이용한 전체 출력
-        for(String s : set)
-            System.out.print(s + '\t');
+        for(Num n : set)
+            System.out.print(n.toString() + '\t');
         System.out.println();
     }
 }
