@@ -1,9 +1,10 @@
 import java.util.TreeSet;
 import java.util.Iterator;
+import java.util.Comparator;
 
 class Person implements Comparable<Person> {
-    private String name;
-    private int age;
+    String name;
+    int age;
 
     public Person(String name, int age) {
         this.name = name;
@@ -19,9 +20,15 @@ class Person implements Comparable<Person> {
     }
 }
 
-public class ComparablePerson {
+class PersonComparator implements Comparator<Person> {
+    public int compare(Person p1, Person p2) {
+        return p2.age - p1.age;
+    }
+}
+
+public class ComparatorPerson {
     public static void main(String[] args) {
-        TreeSet<Person> tree = new TreeSet<>();
+        TreeSet<Person> tree = new TreeSet<>(new PersonComparator());
         tree.add(new Person("YOON", 37));
         tree.add(new Person("HONG", 53));
         tree.add(new Person("PARK", 22));
