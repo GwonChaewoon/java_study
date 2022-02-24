@@ -1,10 +1,10 @@
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.Set;
 
-public class HashMapIteration {
+public class TreeMapIteration {
     public static void main(String[] args) {
-        HashMap<Integer, String> map = new HashMap<>();
+        TreeMap<Integer, String> map = new TreeMap<>();
         map.put(45, "Brown");
         map.put(37, "James");
         map.put(23, "Martin");
@@ -22,7 +22,7 @@ public class HashMapIteration {
             System.out.print(map.get(n).toString() + '\t');
         System.out.println();
 
-        // 전체 Vaule 출력 (반복자 기반)
+        // 전체 Value 출력 (반복자 기반)
         for(Iterator<Integer> itr = ks.iterator(); itr.hasNext(); )
             System.out.print(map.get(itr.next()) + '\t');
         System.out.println();
