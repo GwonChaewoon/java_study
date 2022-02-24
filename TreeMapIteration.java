@@ -1,10 +1,17 @@
 import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.Comparator;
+
+class AgeComparator implements Comparator<Integer> {
+    public int compare(Integer n1, Integer n2) {
+        return n2.intValue() - n1.intValue();
+    }
+}
 
 public class TreeMapIteration {
     public static void main(String[] args) {
-        TreeMap<Integer, String> map = new TreeMap<>();
+        TreeMap<Integer, String> map = new TreeMap<>(new AgeComparator());
         map.put(45, "Brown");
         map.put(37, "James");
         map.put(23, "Martin");
