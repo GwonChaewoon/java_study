@@ -2,38 +2,21 @@ import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Comparator;
 
-class Person implements Comparable<Person> {
-    String name;
-    int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() { return name + " : " + age; }
-
-    @Override
-    public int compareTo(Person p) {
-        return this.age - p.age;
-    }
-}
-
-class PersonComparator implements Comparator<Person> {
-    public int compare(Person p1, Person p2) {
-        return p2.age - p1.age;
+class StringComparator implements Comparator<String> {
+    public int compare(String s1, String s2) {
+        return s1.length() - s2.length();
     }
 }
 
 public class ComparatorPerson {
     public static void main(String[] args) {
-        TreeSet<Person> tree = new TreeSet<>(new PersonComparator());
-        tree.add(new Person("YOON", 37));
-        tree.add(new Person("HONG", 53));
-        tree.add(new Person("PARK", 22));
+        TreeSet<String> tree = new TreeSet<>(new StringComparator());
+        tree.add("Box");
+        tree.add("Rabbit");
+        tree.add("Robot");
 
-        for(Person p : tree)
-            System.out.println(p);
+        for(String s : tree)
+            System.out.print(s.toString() + '\t');
+        System.out.println();
     }
 }
