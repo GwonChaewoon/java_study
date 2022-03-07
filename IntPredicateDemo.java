@@ -1,12 +1,12 @@
 import java.util.List;
 import java.util.Arrays;
-import java.util.function.Predicate;
+import java.util.function.IntPredicate;
 
-public class PredicateDemo {
-    public static int sum(Predicate<Integer> p, List<Integer> lst) {
+public class IntPredicateDemo {
+    public static int sum(IntPredicate ip, List<Integer> lst) {
         int s = 0;
         for(int n : lst) {
-            if(p.test(n))
+            if(ip.test(n))
                 s += n;
         }
         return s;
