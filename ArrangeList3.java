@@ -16,7 +16,7 @@ public class ArrangeList3 {
         ls = new ArrayList<>(ls);
         JustSort js = new JustSort();
 
-        Consumer<List<Integer>> c = e -> js.sort(e);   // 람다식 기반
+        Consumer<List<Integer>> c = js::sort;   // 메소드 참조 기반
         c.accept(ls);
         System.out.println(ls);
     }
